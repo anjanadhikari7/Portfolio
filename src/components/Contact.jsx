@@ -1,5 +1,6 @@
 // src/components/Contact.jsx
 import React, { useState } from "react";
+import { motion } from "framer-motion"; // Import motion for animations
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,14 +32,31 @@ const Contact = () => {
       className="py-20 bg-gradient-to-b from-purple-500 to-indigo-600 text-white"
     >
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+        <motion.h2
+          className="text-3xl font-bold mb-8"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Get in Touch
+        </motion.h2>
         {submitted ? (
-          <p className="text-xl">
+          <motion.p
+            className="text-xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             Thank you for your message! I'll get back to you soon.
-          </p>
+          </motion.p>
         ) : (
-          <form className="max-w-xl mx-auto" onSubmit={handleSubmit}>
-            <div className="mb-4">
+          <form className="max-w-xl mx-auto mt-10" onSubmit={handleSubmit}>
+            <motion.div
+              className="mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
               <input
                 type="text"
                 name="name"
@@ -46,10 +64,15 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="w-full p-3 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300 transition duration-300 ease-in-out"
               />
-            </div>
-            <div className="mb-4">
+            </motion.div>
+            <motion.div
+              className="mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <input
                 type="email"
                 name="email"
@@ -57,10 +80,15 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="w-full p-3 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300 transition duration-300 ease-in-out"
               />
-            </div>
-            <div className="mb-6">
+            </motion.div>
+            <motion.div
+              className="mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
               <textarea
                 name="message"
                 placeholder="Your Message"
@@ -68,15 +96,17 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="5"
-                className="w-full p-3 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="w-full p-3 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300 transition duration-300 ease-in-out"
               ></textarea>
-            </div>
-            <button
+            </motion.div>
+            <motion.button
               type="submit"
               className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Send Message
-            </button>
+            </motion.button>
           </form>
         )}
       </div>
