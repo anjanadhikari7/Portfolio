@@ -1,6 +1,7 @@
-// src/components/Hero.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import {
   SiJavascript,
   SiReact,
@@ -8,7 +9,7 @@ import {
   SiMongodb,
   SiCss3,
   SiHtml5,
-} from "react-icons/si"; // Importing skill icons from react-icons
+} from "react-icons/si";
 
 const skills = [
   {
@@ -23,13 +24,54 @@ const skills = [
 ];
 
 const Hero = () => {
+  // Initialize tsParticles
+  const particlesInit = async (engine) => {
+    await loadFull(engine);
+  };
+
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-400 to-purple-600 text-white"
+      className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-400 to-purple-600 text-white"
     >
+      {/* tsParticles Background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fpsLimit: 60,
+          particles: {
+            number: {
+              value: 50,
+              density: { enable: true, value_area: 800 },
+            },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5 },
+            size: { value: 3, random: true },
+            move: {
+              enable: true,
+              speed: 2,
+              outModes: {
+                default: "bounce",
+              },
+            },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#ffffff",
+              opacity: 0.5,
+              width: 1,
+            },
+          },
+          detectRetina: true,
+        }}
+        className="absolute inset-0"
+      />
+
+      {/* Content Section */}
       <motion.div
-        className="text-center p-6"
+        className="text-center p-6 z-10"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -48,7 +90,7 @@ const Hero = () => {
 
       {/* Skills Section */}
       <motion.div
-        className="mt-10 flex flex-wrap justify-center gap-6"
+        className="mt-10 flex flex-wrap justify-center gap-6 z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
