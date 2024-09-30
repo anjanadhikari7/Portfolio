@@ -1,6 +1,6 @@
 // src/components/About.jsx
 import React from "react";
-import ProfilePic from "../assets/profile.png"; // Ensure you have a profile picture
+import ProfilePic from "../assets/profile-image.png"; // Ensure you have a profile picture
 
 const About = () => {
   return (

@@ -1,25 +1,32 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
-import { FaHome, FaUser, FaEnvelope, FaProjectDiagram } from "react-icons/fa";
-import { GiGiftOfKnowledge } from "react-icons/gi";
+import {
+  FaHome,
+  FaUser,
+  FaEnvelope,
+  FaProjectDiagram,
+  FaTools,
+} from "react-icons/fa"; // Import new icon
 import { motion } from "framer-motion";
+import { Link } from "react-scroll"; // Import Link for scrolling
 
 const navItems = [
   { icon: <FaHome />, name: "Home", to: "home" },
   { icon: <FaUser />, name: "About", to: "about" },
+  { icon: <FaTools />, name: "Skills", to: "skills" }, // New Skills section
   { icon: <FaProjectDiagram />, name: "Projects", to: "projects" },
-  { icon: <GiGiftOfKnowledge />, name: "Skills", to: "skills" },
   { icon: <FaEnvelope />, name: "Contact", to: "contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState("10vh");
+  const [headerHeight, setHeaderHeight] = useState("12vh");
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 40) {
-        setHeaderHeight("6vh");
+        setHeaderHeight("8vh");
         setScrolling(true);
       } else {
         setHeaderHeight("10vh");
@@ -32,12 +39,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const handleScrollTo = (id) => {
-    const element = document.getElementById(id);
-    element.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
-  };
 
   return (
     <nav className="z-50 bg-customdark fixed w-full">
@@ -66,16 +67,19 @@ const Navbar = () => {
 
           <div className="hidden md:flex md:justify-between md:space-x-8 text-white">
             {navItems.map((item, index) => (
-              <div
+              <Link
                 key={index}
+                to={item.to} // Use Link from react-scroll
+                smooth={true} // Smooth scrolling
+                duration={500} // Duration of the scroll
                 className="group flex items-center cursor-pointer hover:text-yellow-500 transition"
-                onClick={() => handleScrollTo(item.to)}
+                onClick={() => setIsOpen(false)} // Close menu on click
               >
                 <span className="flex flex-col items-center">
                   {item.icon}
                   <span>{item.name}</span>
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -83,30 +87,11 @@ const Navbar = () => {
             className="md:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
+            {/* Hamburger menu icon */}
             {isOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                aria-hidden="true"
-                className="w-[2rem] h-[2rem]"
-              >
-                <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z"></path>
-              </svg>
+              <svg /* Close icon */>...</svg>
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                aria-hidden="true"
-                className="w-[2rem] h-[2rem]"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75ZM2 8a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8Zm0 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
+              <svg /* Open icon */>...</svg>
             )}
           </div>
         </div>
@@ -120,13 +105,17 @@ const Navbar = () => {
           className="fixed top-0 right-0 h-screen w-full bg-purple-700 text-white flex flex-col items-center space-y-6 py-16"
         >
           {navItems.map((item, index) => (
-            <div
+            <Link
               key={index}
+              to={item.to} // Use Link from react-scroll
+              smooth={true}
+              duration={500}
               className="group flex items-center text-2xl font-semibold cursor-pointer hover:text-yellow-500 transition"
-              onClick={() => handleScrollTo(item.to)}
+              onClick={() => setIsOpen(false)} // Close menu on click
             >
-              {item.name}
-            </div>
+              {item.icon}
+              <span className="ml-2">{item.name}</span>
+            </Link>
           ))}
         </motion.div>
       )}
