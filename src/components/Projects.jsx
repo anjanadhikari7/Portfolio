@@ -28,7 +28,7 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="min-h-screen bg-transparent py-10">
+    <section id="projects" className=" bg-transparent py-10 mb-0">
       {" "}
       {/* Change bg-gray-100 to bg-transparent */}
       <motion.div

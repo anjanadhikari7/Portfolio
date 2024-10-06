@@ -120,22 +120,24 @@ const Skills = () => {
   return (
     <section
       ref={sectionRef}
-      className="px-5 lg:px-20 py-10" // Increased padding to blend better with the background
+      className="px-5 lg:px-20 py-2 mt-0"
       id="skills"
       style={{ backgroundColor: "rgba(246, 241, 235, 0.8)" }} // Semi-transparent background
     >
       <div className="mx-auto max-w-[1440px] flex flex-col overflow-hidden">
-        <h2 className="text-4xl font-bold mb-6 text-white">My Skills</h2>
-
-        <div className="flex justify-center gap-7 overflow-hidden">
+        <h2 className="text-4xl font-bold mb-6 text-white drop-shadow-lg text-center">
+          My Skills
+        </h2>
+        {/* Centered the heading */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-7 overflow-hidden">
+          {" "}
+          {/* Responsive grid layout */}
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               className="flex flex-col gap-2 items-center"
-              initial={{ opacity: 0, x: 100 }} // Start off-screen
-              animate={
-                isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }
-              } // Animate into view
+              initial={{ opacity: 0, y: 50 }} // Start off-screen from below
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }} // Animate into view
               transition={{
                 type: "spring",
                 stiffness: 300,
@@ -146,8 +148,6 @@ const Skills = () => {
             >
               <div>{skill.icon}</div>
               <span className="text-white font-semibold text-xs lg:text-base">
-                {" "}
-                {/* Changed text color to white */}
                 {skill.name}
               </span>
             </motion.div>
