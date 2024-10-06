@@ -80,6 +80,7 @@ const Contact = () => {
           Contact Me
         </motion.h2>
         <div className="flex flex-col md:flex-row justify-around items-start">
+          {/* Contact Details */}
           <div className="md:w-1/2 space-y-6 text-left p-4 text-white">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -87,7 +88,7 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div
-                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer"
+                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer transition hover:bg-opacity-20"
                 onClick={() => window.open("tel:0435662594")}
               >
                 <BsFillTelephoneFill size={24} />
@@ -100,7 +101,7 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div
-                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer"
+                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer transition hover:bg-opacity-20"
                 onClick={() => window.open("mailto:anjanadhikari179@gmail.com")}
               >
                 <CgMail size={24} />
@@ -113,7 +114,7 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div
-                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer"
+                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer transition hover:bg-opacity-20"
                 onClick={() =>
                   window.open(
                     "https://www.google.com/maps/place/Sydney,+Australia"
@@ -125,6 +126,7 @@ const Contact = () => {
               </div>
             </motion.div>
           </div>
+          {/* Contact Form */}
           <div className="md:w-1/2 mt-12 md:mt-0 p-4">
             <motion.form
               onSubmit={handleSubmit}

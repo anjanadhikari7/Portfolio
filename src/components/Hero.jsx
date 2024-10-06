@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-scroll";
-import profilePic from "../assets/profile.png";
+import profilePic from "../assets/profile-image.png";
 import TextAnimation from "./TextAnimation";
 
 const Hero = () => {
@@ -64,7 +64,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <div className="hidden lg:flex justify-center items-center relative lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden bg-white">
+        <div className="hidden lg:flex justify-center items-center relative lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden">
           <motion.img
             src={profilePic}
             alt="Anjan Adhikari"

@@ -79,12 +79,7 @@ const Navbar = () => {
           style={{ height: headerHeight, transition: "height 0.3s ease" }}
         >
           <div className="text-white text-2xl font-bold flex items-center">
-            <img
-              src="/logo.png" // Placeholder for your logo
-              alt="logo"
-              className="w-8 h-8 mr-2"
-            />
-            MyPortfolio
+            Anjan Adhikari
           </div>
 
           <div className="hidden md:flex md:justify-between md:space-x-8 text-white">
