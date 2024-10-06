@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -29,14 +28,16 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="min-h-screen bg-gray-100 py-10">
+    <section id="projects" className="min-h-screen bg-transparent py-10">
+      {" "}
+      {/* Change bg-gray-100 to bg-transparent */}
       <motion.div
         className="container mx-auto text-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-4xl font-bold mb-6">My Projects</h2>
+        <h2 className="text-4xl font-bold mb-6 text-white">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
           {projectsData.map((project, index) => (
             <div

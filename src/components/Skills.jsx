@@ -1,4 +1,3 @@
-// src/components/Skills.jsx
 import React, { useEffect, useRef, useState } from "react";
 import {
   FaHtml5,
@@ -80,7 +79,6 @@ const skills = [
     icon: <SiFigma className="text-purple-500 w-8 h-8" />,
     name: "Figma",
   },
-
   {
     icon: <DiJava className="text-pink-500 w-8 h-8" />,
     name: "Java",
@@ -122,14 +120,12 @@ const Skills = () => {
   return (
     <section
       ref={sectionRef}
-      className="px-5 lg:px-20 py-6 backdrop-blur-sm"
+      className="px-5 lg:px-20 py-10" // Increased padding to blend better with the background
       id="skills"
-      style={{ backgroundColor: "#F6F1EB" }}
+      style={{ backgroundColor: "rgba(246, 241, 235, 0.8)" }} // Semi-transparent background
     >
       <div className="mx-auto max-w-[1440px] flex flex-col overflow-hidden">
-        <h2 className="text-xl md:text-3xl font-bold text-center text-orange-500 mb-16 tracking-wider font-mono">
-          My Skills
-        </h2>
+        <h2 className="text-4xl font-bold mb-6 text-white">My Skills</h2>
 
         <div className="flex justify-center gap-7 overflow-hidden">
           {skills.map((skill, index) => (
@@ -149,7 +145,9 @@ const Skills = () => {
               whileHover={{ scale: 1.1, cursor: "pointer" }}
             >
               <div>{skill.icon}</div>
-              <span className="text-gray-400 font-semibold text-xs lg:text-base">
+              <span className="text-white font-semibold text-xs lg:text-base">
+                {" "}
+                {/* Changed text color to white */}
                 {skill.name}
               </span>
             </motion.div>

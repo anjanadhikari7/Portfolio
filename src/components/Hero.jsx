@@ -1,14 +1,18 @@
+// src/components/Hero.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-scroll"; // Import Link from react-scroll
+import { Link } from "react-scroll";
 import profilePic from "../assets/profile.png";
 import TextAnimation from "./TextAnimation";
 
 const Hero = () => {
   return (
-    <div className="h-[100vh] mt-16 sm:mt-0 bg-gradient-to-r from-purple-500 to-blue-600 relative flex items-center justify-center">
+    <div
+      className="relative h-[100vh] mt-16 sm:mt-0 flex items-center justify-center"
+      id="home"
+    >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 items-center">
         <div className="text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-snug">
@@ -19,7 +23,6 @@ const Hero = () => {
             Full-Stack Developer crafting seamless digital experiences using the
             MERN stack.
           </p>
-
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -30,24 +33,21 @@ const Hero = () => {
               href="/assets/anjan-adhikari-resume.pdf"
               download="anjan-adhikari-resume.pdf"
             >
-              <button className="px-8 py-3 bg-yellow-400 text-black rounded-lg font-semibold shadow-md hover:bg-yellow-300 flex items-center justify-center">
+              <button className="px-8 py-3 bg-yellow-500 text-black rounded-lg font-semibold shadow-md hover:bg-yellow-400 flex items-center justify-center transition-all">
                 Download Resume
                 <ArrowDownTrayIcon className="ml-2 h-5 w-5" />
               </button>
             </a>
-
-            {/* Smooth scroll to contact section */}
             <Link
               to="contact"
               smooth={true}
               duration={500}
-              className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold shadow-md hover:bg-white hover:text-black flex items-center justify-center cursor-pointer"
+              className="px-8 py-3 bg-transparent border-2 border-yellow-400 text-yellow-400 rounded-lg font-semibold shadow-md hover:bg-yellow-400 hover:text-black flex items-center justify-center cursor-pointer transition-all"
             >
               Contact Me
               <FaEnvelope className="ml-2 h-5 w-5" />
             </Link>
           </motion.div>
-
           <div className="mt-8 flex justify-center lg:justify-start space-x-6">
             <a
               href="https://github.com/anjanadhikari7"
@@ -67,7 +67,6 @@ const Hero = () => {
             </a>
           </div>
         </div>
-
         <div className="hidden lg:flex justify-center items-center relative lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden bg-white">
           <motion.img
             src={profilePic}

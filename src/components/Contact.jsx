@@ -66,12 +66,13 @@ const Contact = () => {
 
   return (
     <section
-      className="py-16 bg-gradient-to-b from-purple-500 to-indigo-600 text-white"
+      className="py-16"
       id="contact"
+      style={{ backgroundColor: "rgba(246, 241, 235, 0.8)" }} // Semi-transparent background
     >
       <div className="container mx-auto text-center">
         <motion.h2
-          className="text-4xl font-bold mb-8"
+          className="text-4xl font-bold mb-8 text-white" // White text for contrast
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -79,13 +80,16 @@ const Contact = () => {
           Contact Me
         </motion.h2>
         <div className="flex flex-col md:flex-row justify-around items-start">
-          <div className="md:w-1/2 space-y-6 text-left p-4">
+          <div className="md:w-1/2 space-y-6 text-left p-4 text-white">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg">
+              <div
+                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer"
+                onClick={() => window.open("tel:0435662594")}
+              >
                 <BsFillTelephoneFill size={24} />
                 <span>0435662594</span>
               </div>
@@ -95,7 +99,10 @@ const Contact = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg">
+              <div
+                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer"
+                onClick={() => window.open("mailto:anjanadhikari179@gmail.com")}
+              >
                 <CgMail size={24} />
                 <span>anjanadhikari179@gmail.com</span>
               </div>
@@ -105,7 +112,14 @@ const Contact = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <div className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg">
+              <div
+                className="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-md shadow-lg cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/maps/place/Sydney,+Australia"
+                  )
+                }
+              >
                 <MdLocationOn size={24} />
                 <span>Based in Sydney, Australia</span>
               </div>
