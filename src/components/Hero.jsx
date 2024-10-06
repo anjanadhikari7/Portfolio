@@ -29,10 +29,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-6 flex flex-col lg:flex-row gap-4 justify-center lg:justify-start"
           >
-            <a
-              href="/assets/anjan-adhikari-resume.pdf"
-              download="anjan-adhikari-resume.pdf"
-            >
+            <a href="../assets/Resume_Anjan.pdf" download="Resume_Anjan.pdf">
               <button className="px-8 py-3 bg-yellow-500 text-black rounded-lg font-semibold shadow-md hover:bg-yellow-400 flex items-center justify-center transition-all">
                 Download Resume
                 <ArrowDownTrayIcon className="ml-2 h-5 w-5" />

@@ -55,12 +55,7 @@ const ParticlesBackground = ({ header }) => {
             value: "#ffffff",
           },
           shape: {
-            type: ["circle", "triangle", "edge", "polygon"], // Using multiple shapes
-            options: {
-              polygon: {
-                nb_sides: 6, // Example: hexagon
-              },
-            },
+            type: ["circle", "edge"], // Using multiple shapes
           },
           opacity: {
             value: 0.5,
