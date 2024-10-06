@@ -1,25 +1,27 @@
 import React from "react";
+import Pro1 from "../assets/Pro-1.jpg";
 import { motion } from "framer-motion";
+import { FiExternalLink, FiCode } from "react-icons/fi"; // Importing external link and code icons
 
 const projectsData = [
   {
-    title: "Project One",
+    title: "Gadget Galaxy",
     description: "A brief description of Project One.",
-    imageUrl: "/path/to/image1.jpg",
-    demoLink: "#", // Replace with actual demo link
-    codeLink: "#", // Replace with actual code link
+    imageUrl: Pro1, // Ensure the path is correct
+    demoLink: "http://eocm-fe.s3-website-ap-southeast-2.amazonaws.com/", // Replace with actual demo link
+    codeLink: "https://github.com/anjanadhikari7/Ecom-Buyer-Client", // Replace with actual code link
   },
   {
     title: "Project Two",
     description: "A brief description of Project Two.",
-    imageUrl: "/path/to/image2.jpg",
+    imageUrl: "/path/to/image2.jpg", // Update to your actual path
     demoLink: "#",
     codeLink: "#",
   },
   {
     title: "Project Three",
     description: "A brief description of Project Three.",
-    imageUrl: "/path/to/image3.jpg",
+    imageUrl: "/path/to/image3.jpg", // Update to your actual path
     demoLink: "#",
     codeLink: "#",
   },
@@ -28,9 +30,7 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section id="projects" className=" bg-transparent py-10 mb-0">
-      {" "}
-      {/* Change bg-gray-100 to bg-transparent */}
+    <section id="projects" className="bg-transparent py-10 mb-0">
       <motion.div
         className="container mx-auto text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -55,15 +55,16 @@ const Projects = () => {
                 <div className="flex justify-between">
                   <a
                     href={project.demoLink}
-                    className="text-blue-500 hover:underline"
+                    className="flex items-center text-blue-500 hover:underline"
+                    target="_blank"
                   >
-                    Live Demo
+                    <FiExternalLink className="mr-1" /> Live Demo
                   </a>
                   <a
                     href={project.codeLink}
-                    className="text-blue-500 hover:underline"
+                    className="flex items-center text-blue-500 hover:underline"
                   >
-                    Code
+                    <FiCode className="mr-1" /> Code
                   </a>
                 </div>
               </div>

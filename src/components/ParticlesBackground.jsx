@@ -61,7 +61,7 @@ const ParticlesBackground = ({ header }) => {
             value: 0.5,
           },
           size: {
-            value: { min: 2, max: 5 },
+            value: { min: 2, max: 6 },
           },
           move: {
             enable: true,
@@ -77,7 +77,7 @@ const ParticlesBackground = ({ header }) => {
             enable: true,
             distance: 100,
             color: "#ffffff",
-            opacity: 0.1,
+            opacity: 0.21,
             width: 2,
           },
         },

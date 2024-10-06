@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-scroll";
 import profilePic from "../assets/profile-image.png";
+
 import TextAnimation from "./TextAnimation";
 
 const Hero = () => {
@@ -29,12 +30,15 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-6 flex flex-col lg:flex-row gap-4 justify-center lg:justify-start"
           >
-            <a href="../assets/Resume_Anjan.pdf" download="Resume_Anjan.pdf">
-              <button className="px-8 py-3 bg-yellow-500 text-black rounded-lg font-semibold shadow-md hover:bg-yellow-400 flex items-center justify-center transition-all">
-                Download Resume
-                <ArrowDownTrayIcon className="ml-2 h-5 w-5" />
-              </button>
+            <a
+              href="/Resume_Anjan.pdf"
+              download
+              className="px-8 py-3 bg-yellow-500 text-black rounded-lg font-semibold shadow-md hover:bg-yellow-400 flex items-center justify-center transition-all"
+            >
+              Download Resume
+              <ArrowDownTrayIcon className="ml-2 h-5 w-5" />
             </a>
+
             <Link
               to="contact"
               smooth={true}
