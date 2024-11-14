@@ -1,6 +1,7 @@
 import React from "react";
 import Pro1 from "../assets/Pro-1.jpg";
 import Pro2 from "../assets/Pro-2.jpg";
+import Pro3 from "../assets/Pro-3.jpg";
 import { motion } from "framer-motion";
 import { FiExternalLink, FiCode } from "react-icons/fi"; // Importing external link and code icons
 
@@ -9,25 +10,25 @@ const projectsData = [
     title: "Gadget Galaxy",
     description:
       "Gadget Galaxy is an e-commerce platform for tech gadgets, offering a seamless shopping experience. It features secure user authentication, product browsing, and Stripe integration for payments. Admins can manage products and orders through a dashboard, while users enjoy advanced search and responsive design across devices.",
-    imageUrl: Pro1, // Ensure the path is correct
-    demoLink: "http://eocm-fe.s3-website-ap-southeast-2.amazonaws.com/", // Replace with actual demo link
-    codeLink: "https://github.com/anjanadhikari7/Ecom-Buyer-Client", // Replace with actual code link
+    imageUrl: Pro1,
+    demoLink: "http://eocm-fe.s3-website-ap-southeast-2.amazonaws.com/",
+    codeLink: "https://github.com/anjanadhikari7/Ecom-Buyer-Client",
   },
   {
     title: "Gadget Galaxy- Admin Portal",
     description:
       "Gadget Galaxy - Admin Portal is a management dashboard for overseeing products, categories, and user information in an e-commerce platform. The portal enables admins to track inventory, manage user data, and streamline operations for a seamless shopping experience",
-    imageUrl: Pro2, // Update to your actual path
+    imageUrl: Pro2,
     demoLink:
       "https://ecom-seller-client-git-main-anjan-adhikaris-projects.vercel.app/",
     codeLink: "https://github.com/anjanadhikari7/Ecom-Seller-API",
   },
   {
-    title: "Project Three",
-    description: "A brief description of Project Three.",
-    imageUrl: "/path/to/image3.jpg", // Update to your actual path
-    demoLink: "#",
-    codeLink: "#",
+    title: "Portfolio",
+    description: "My portfolio website",
+    imageUrl: Pro3,
+    demoLink: "https://portfolio-anjan-adhikaris-projects.vercel.app/",
+    codeLink: "https://github.com/anjanadhikari7/Portfolio",
   },
   // Add more projects as needed
 ];
