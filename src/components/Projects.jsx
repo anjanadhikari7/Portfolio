@@ -9,7 +9,7 @@ const projectsData = [
   {
     title: "Gadget Galaxy",
     description:
-      "Gadget Galaxy is an e-commerce platform for tech gadgets, offering a seamless shopping experience. It features secure user authentication, product browsing, and Stripe integration for payments. Admins can manage products and orders through a dashboard, while users enjoy advanced search and responsive design across devices.",
+      "Gadget Galaxy is an e-commerce platform for tech gadgets, offering a seamless shopping experience.",
     imageUrl: Pro1,
     demoLink: "http://eocm-fe.s3-website-ap-southeast-2.amazonaws.com/",
     codeLink: "https://github.com/anjanadhikari7/Ecom-Buyer-Client",
@@ -17,7 +17,7 @@ const projectsData = [
   {
     title: "Gadget Galaxy- Admin Portal",
     description:
-      "Gadget Galaxy - Admin Portal is a management dashboard for overseeing products, categories, and user information in an e-commerce platform. The portal enables admins to track inventory, manage user data, and streamline operations for a seamless shopping experience",
+      "Gadget Galaxy - Admin Portal is a management dashboard for overseeing products, categories, and user information. ",
     imageUrl: Pro2,
     demoLink:
       "https://ecom-seller-client-git-main-anjan-adhikaris-projects.vercel.app/",
